@@ -38,8 +38,10 @@ const SubscriptionPage = (props) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const newUser = await UserService.getUserProfile(getUserInformation().id);
-      setUser(newUser);
+      if (getUserInformation()) {
+        const newUser = await UserService.getUserProfile(getUserInformation().id);
+        setUser(newUser);
+      }
     }
     fetchUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -73,13 +75,19 @@ const SubscriptionPage = (props) => {
               height: "25rem",
               margin: "0 auto"
             }} />
-          <Typography style={{
+            <Typography style={{
             margin: 'auto',
             textAlign: 'center'
           }}>
-              Noi dung thanh toan: <b>Thanh toan ID {transactionNumber}</b>
+              Subscription price: <b>50.000VND/month</b>
           </Typography>
-          {!paid && 
+          {user.id && (<Typography style={{
+            margin: 'auto',
+            textAlign: 'center'
+          }}>
+              Content: <b>Payment ID {transactionNumber}</b>
+          </Typography>)}
+          {!paid && !user && 
           (<Button style={{
             margin: 'auto',
           }} 
