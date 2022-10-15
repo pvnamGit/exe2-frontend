@@ -4,7 +4,7 @@ import {
   Grid, Pagination, Box, Typography,
 } from '@mui/material';
 // import { NavLink } from 'react-router-dom';
-import PublicCourseSingleList from './PublicCourseSingleList';
+import MotorbikeSingleList from './MotorbikeSingleList';
 import { LoadingDNA3X } from '../../common/Loading';
 import MotorbikesService from '../../../services/motorbikes.service';
 
@@ -30,7 +30,6 @@ const MotobikesList = (props) => {
     setFetched(true);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  console.log(motorbikesList)
 
   return (
     <Grid
@@ -61,7 +60,7 @@ const MotobikesList = (props) => {
                   padding: '0.35rem',
                 }}
               >
-                <PublicCourseSingleList
+                <MotorbikeSingleList
                   motorbike={motorbike}
                 />
               </Grid>

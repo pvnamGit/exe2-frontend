@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
-const PublicCourseSingleList = ({ motorbike }) => {
+const MotorbikeSingleList = ({ motorbike }) => {
 
 
   return (
@@ -21,7 +21,7 @@ const PublicCourseSingleList = ({ motorbike }) => {
         width: '100%',
         backgroundSize: 'contain',
         backgroundRepeat: 'repeat',
-        backgroundImage: 'https://www.hondaireland.ie/assets/2018/11/Honda-CBR650R-05-e1547808350784-640x425.jpg',
+        backgroundImage: 'url(/image/background/hire_example.jpg)',
         '&:hover': {
           boxShadow: 7,
         },
@@ -38,7 +38,7 @@ const PublicCourseSingleList = ({ motorbike }) => {
         }}
       >
         <NavLink
-          to={`/motobike/${motorbike}`}
+          to={`/motobike/${motorbike.id}`}
         >
           <Box>
             <Typography
@@ -81,4 +81,4 @@ const PublicCourseSingleList = ({ motorbike }) => {
   );
 }
  
-export default PublicCourseSingleList
+export default MotorbikeSingleList

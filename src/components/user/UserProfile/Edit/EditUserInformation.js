@@ -323,24 +323,6 @@ const UserPassword = () => {
       disabled: false,
       error: !!errorFacebookUrl,
     },
-    {
-      label: 'Job Title',
-      name: 'jobTitle',
-      value: jobTitle || '',
-      onChange: onChangeJobTitle,
-      helperText: errorJobTitle,
-      disabled: false,
-      error: !!errorJobTitle,
-    },
-    {
-      label: 'Affiliation',
-      name: 'affiliate',
-      value: affiliate || '',
-      onChange: onChangeaffiliate,
-      helperText: errorAffiliate,
-      disabled: false,
-      error: !!errorAffiliate,
-    },
   ]
 
   return (
@@ -378,51 +360,6 @@ const UserPassword = () => {
             </Box>
           ))
         }
-        <Box my={2} display="flex" flexDirection="row">
-          {/* <LocalizationProvider dateAdapter={MomentUtils}>
-            <DatePicker
-              inputVariant="outlined"
-              id="birthday-picker-dialog"
-              label="Ngày sinh"
-              format="DD/MM/YYYY"
-              value={birthday || null}
-              onChange={onBirthdayChange}
-              KeyboardButtonProps={{
-                'aria-label': 'change birthday',
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider> */}
-          <Box>
-            <CustomMuiInput
-              fullWidth
-              label='GPA'
-              name='gpa'
-              variant="outlined"
-              type="number"
-              value={gpa || ''}
-              onChange={onChangeGpa}
-              error={!!errorGpa}
-              helperText={errorGpa}
-            />
-          </Box>
-          <Box ml={2} sx={{ minWidth: '7rem' }}>
-            <FormControl fullWidth>
-              <InputLabel id="profile-gender">Gender</InputLabel>
-              <Select
-                labelId="profile-gender-select"
-                id="demo-simple-select"
-                value={gender || 'other'}
-                label="Gender"
-                onChange={onChangeGender}
-              >
-                <MenuItem value='male'>Male</MenuItem>
-                <MenuItem value='female'>Female</MenuItem>
-                <MenuItem value='other'>Prefer not to say</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-        </Box>
         <Box mt={2}>
           <Button
             disabled={isSaving}

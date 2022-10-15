@@ -84,16 +84,6 @@ const UserOptionsMenu = () => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <NavLink to={`/admin/courses`}>
-          <MenuItem onClick={handleClose}>
-            <ListItemIcon>
-              <BallotIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>
-              Your course
-            </ListItemText>
-          </MenuItem>
-        </NavLink>
         <NavLink to={`/users/${id}/edit`}>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>

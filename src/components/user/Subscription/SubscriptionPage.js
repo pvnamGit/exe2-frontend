@@ -7,12 +7,13 @@ import Body from '../../basic/Body';
 import TransactionService from '../../../services/transactions.service';
 import { getUserInformation } from '../../../utils/cookies'; 
 import { ToastContext } from '../../../context/toast.context';
+import UserService from '../../../services/user.service';
 
 const SubscriptionPage = (props) => {
   const [transactionNumber, setTransactionNumber] = useState(0);
   const [paid, setPaid] = useState(false);
   const toastContext = useContext(ToastContext);
-
+  const [user, setUser] = useState({});
 
   const randomTransactionId = () => {
     // 👇️ get number between min (inclusive) and max (inclusive)
@@ -35,6 +36,15 @@ const SubscriptionPage = (props) => {
     setTransactionNumber(randomTransactionId());
   }, [])
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const newUser = await UserService.getUserProfile(getUserInformation().id);
+      setUser(newUser);
+    }
+    fetchUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
       <NavigationBar
@@ -44,7 +54,15 @@ const SubscriptionPage = (props) => {
         ]}
       />
       <Body>
-        <Box style={{
+        {( user.canCrud || user.isRequestPayment )? (
+          <Typography style={{
+            margin: 'auto',
+            textAlign: 'center'
+          }}>
+              Thank you for your payment
+          </Typography>
+        ):
+        (<Box style={{
           display: 'flex',
           flexDirection: 'column'
         }}>
@@ -70,7 +88,7 @@ const SubscriptionPage = (props) => {
           >
             Confirm Payment
           </Button>)}
-        </Box>
+        </Box>)}
       </Body>
     </>
   );
