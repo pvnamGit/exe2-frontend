@@ -30,10 +30,12 @@ const AddMotobikePage = (props) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const newUser = await UserService.getUserProfile(getUserInformation().id);
-      setUser(newUser);
+      if (getUserInformation()) {
+        const newUser = await UserService.getUserProfile(getUserInformation().id);
+        setUser(newUser);
+        setMotorbike({ ...motorbike, userId: getUserInformation().id })
+      }
     }
-    setMotorbike({ ...motorbike, userId: getUserInformation().id })
     fetchUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -54,7 +56,7 @@ const AddMotobikePage = (props) => {
 
   useEffect(() => {
     const shouldDisabledSaveBtn = !user.canCrud ||
-      !motorbike.title || !motorbike.description || !motorbike.contactInfo || !motorbike.cost || !motorbike.length;
+      !motorbike.title || !motorbike.description || !motorbike.contactInfo || !motorbike.cost || !motorbike.durationDay;
     setDisabledSaveBtn(shouldDisabledSaveBtn)
   }, [motorbike, user])
 
@@ -75,11 +77,8 @@ const AddMotobikePage = (props) => {
   }
 
   const validateLength = (durationDay) => {
-    const lengthNumber = parseInt(durationDay, 10);
-    if (lengthNumber > 60*5) {
-      setLengthError('Lession length should not be greater than 5 hours.')
-    } else if (lengthNumber < 60) {
-      setLengthError('Lession length should not be smaller than 1 hour.')
+    if (durationDay < 1) {
+      setLengthError('Duration day should greater than 1.')
     } else {
       setLengthError('');
     }
