@@ -18,7 +18,7 @@ import UserService from '../../../services/user.service';
 import { getUserInformation } from '../../../utils/cookies';
 
 
-const AddMotobikePage = (props) => {
+const AddMotorbikePage = (props) => {
   const [motorbike, setMotorbike] = useState({ cost: 100, length: 1 });
   const [costError, setCostError] = useState('');
   const [lengthError, setLengthError] = useState('');
@@ -103,7 +103,6 @@ const AddMotobikePage = (props) => {
 
   const onSaveMotorbike = async () => {
     setSaving(true);
-    console.log("🚀 ~ file: AddMotobikePage.js ~ line 107 ~ onSaveMotorbike ~ motorbike", motorbike)
     const response = await MotorbikesService.createMotorbike(motorbike);
     if (typeof response === 'string') {
       toastContext.addNotification('Error', response, 'error');
@@ -258,4 +257,4 @@ const AddMotobikePage = (props) => {
   );
 }
 
-export default AddMotobikePage;
+export default AddMotorbikePage;

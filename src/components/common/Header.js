@@ -58,8 +58,8 @@ const Header = () => {
   //   // Default
   //   items.push({
   //     Id: 1,
-  //     Link: '/motobikes',
-  //     Title: 'Motobikes',
+  //     Link: '/Motorbikes',
+  //     Title: 'Motorbikes',
   //   });
   //   items.push({
   //     Id: 2,
@@ -192,7 +192,7 @@ const Header = () => {
               <Box display="flex" flexDirection="row" alignItems="center">
                 <IconButton>
                   <Avatar
-                    alt="Motobike Go"
+                    alt="Motorbike Go"
                     src="logo.png"
                   />
                 </IconButton>
@@ -201,7 +201,7 @@ const Header = () => {
                     variant="button"
                     color="primary"
                   >
-                    Motobike Go
+                    Motorbike Go
                   </Typography>
                 </Box>
               </Box>

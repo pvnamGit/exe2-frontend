@@ -1,27 +1,26 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Page404 from '../../components/common/404';
-import MotobikesPage from '../../components/user/Course/MotobikesPage';
-import MotobikesProvider from '../../context/motobikes.context';
-import MotorbikeInfo from '../../components/user/Course/MotorbikeInfo';
+import MotorbikesPage from '../../components/user/Course/MotorbikesPage';
+import MotorbikesProvider from '../../context/motorbikes.context';
 import AdminCourseMaterialProvider from '../../context/adminCourseMaterial.context';
 import AdminCourseTimetableProvider from '../../context/adminCourseTimetable.context';
-import SubscriptionPage from '../../components/user/Subscription/SubscriptionPage';
+import MotorbikeInfo from '../../components/user/Course/MotorbikeInfo';
 
 const CourseRoute = () => {
 
   return (
-    <MotobikesProvider>
+    <MotorbikesProvider>
       <AdminCourseMaterialProvider>
         <AdminCourseTimetableProvider>
           <Switch>
-            <Route path="/motobike/:id" component={SubscriptionPage} />
-            <Route path="/motobikes" component={MotobikesPage} />
+            <Route path="/motorbikes/:mid" component={MotorbikeInfo} />
+            <Route path="/motorbikes" component={MotorbikesPage} />
             <Route component={Page404} />
           </Switch>
         </AdminCourseTimetableProvider>
       </AdminCourseMaterialProvider>
-    </MotobikesProvider>
+    </MotorbikesProvider>
   );
 };
 

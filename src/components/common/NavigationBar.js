@@ -21,7 +21,7 @@ const NavigationBar = (props) => {
   useEffect(() => {
     const { nav } = props;
     if (nav.length > 1) {
-      document.title = `Motobike Go | ${nav[nav.length - 1][0]}`;
+      document.title = `Motorbike Go | ${nav[nav.length - 1][0]}`;
     }
   });
 

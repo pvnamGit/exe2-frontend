@@ -4,7 +4,7 @@ import { SubjectContext } from '../../../context/subject.context';
 import MuiSearch from '../../common/MuiSearch';
 
 const BikeFilter = (props) => {
-  const { onGetMotobikesList } = props;
+  const { onGetMotorbikesList } = props;
   const subjectContext = useContext(SubjectContext);
   const [subjectId, setSubjectId] = useState(null);
   const [courseName, setCourseName] = useState('');
@@ -19,7 +19,7 @@ const BikeFilter = (props) => {
   }
 
   const onFiler = () => {
-    onGetMotobikesList({
+    onGetMotorbikesList({
       page: 1,
       subjectId,
       courseName,
@@ -42,7 +42,7 @@ const BikeFilter = (props) => {
     >
       <Box>
         <MuiSearch
-          label="Search motobike name"
+          label="Search Motorbike name"
           value={courseName}
           onChange={(event) => setCourseName(event.target.value)}
           onSearhc={onFiler}

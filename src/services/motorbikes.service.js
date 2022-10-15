@@ -36,12 +36,12 @@ class MotorbikesService {
     }
   }
 
-  static async getMotorbike() {
+  static async getMotorbike(mid) {
     try {
       const response = await new APIService(
         'get',
         MOTORBIKE_ID,
-        null,
+        {mid},
         null,
       ).request();
       return response;

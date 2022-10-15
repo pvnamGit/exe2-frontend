@@ -1,24 +1,23 @@
 import React from 'react';
 import CourseService from '../services/course.service';
 
-export const MotobikesContext = React.createContext();
+export const MotorbikesContext = React.createContext();
 
 class CourseProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      motobikesList: [],
+      MotorbikesList: [],
       total: 0,
-      motobikes: {},
+      Motorbikes: {},
       limit: 18,
-      getMotobikesList: this.getMotobikesList,
-      getMotobike: this.getMotobike,
+      getMotorbikesList: this.getMotorbikesList,
+      getMotorbike: this.getMotorbike,
       register: this.register,
     };
   }
 
-  getMotobikesList = async (setting, auth) => {
-    console.log(auth);
+  getMotorbikesList = async (setting, auth) => {
     const response = await CourseService.getCourseList({ ...setting, limit: this.state.limit }, auth);
     if (typeof response === 'string') {
         return;
@@ -27,7 +26,7 @@ class CourseProvider extends React.Component {
     }
   }
 
-  getMotobike = async (id, auth = false) => {
+  getMotorbike = async (id, auth = false) => {
     let newCourse = null;
     // if (auth) {
     //   newCourse = await MotorbikesService.getCourse(id);
@@ -58,15 +57,15 @@ class CourseProvider extends React.Component {
   }
 
   componentDidMount() {
-    this.getMotobikesList({});
+    this.getMotorbikesList({});
   }
 
   render() {
     const { children } = this.props;
     return (
-      <MotobikesContext.Provider value={this.state}>
+      <MotorbikesContext.Provider value={this.state}>
         { children }
-      </MotobikesContext.Provider>
+      </MotorbikesContext.Provider>
     );
   }
 }

@@ -39,13 +39,13 @@ const HomePage = () => {
                 maxWidth: '40rem',
               }}
             >
-              A nice motobike makes you more beatuiful.
+              A nice Motorbike makes you more beatuiful.
             </Typography>
           </Box>
           <Box>
             <img
-              src="image/homepage_motobike.png"
-              alt="learning-brain"
+              src="image/homepage_motorbike.png"
+              alt="Motorbike"
               style={{
                 maxHeight: "20rem"
               }}
@@ -64,8 +64,8 @@ const HomePage = () => {
             [{
               color: 'primary.main',
               textColor: '#fff',
-              text: 'Hiring a motobike',
-              href: '/motobikes',
+              text: 'Hiring a Motorbike',
+              href: '/motorbikes',
               icon: <TwoWheelerIcon sx={{ fontSize: "7rem" }} />,
             }, {
               color: 'secondary.main',

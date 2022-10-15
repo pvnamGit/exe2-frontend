@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { MotobikesContext } from '../../../context/motobikes.context';
 import {
   Grid, Pagination, Box, Typography,
 } from '@mui/material';
@@ -8,20 +7,20 @@ import MotorbikeSingleList from './MotorbikeSingleList';
 import { LoadingDNA3X } from '../../common/Loading';
 import MotorbikesService from '../../../services/motorbikes.service';
 
-const MotobikesList = (props) => {
+const MotorbikesList = (props) => {
   const [page, setPage] = useState(1);
   const [fetched, setFetched] = useState(false);
   const [totalPage, setTotalPage] = useState(1);
   const [motorbikesList, setMotorbikesList] = useState([]);
-  console.log("🚀 ~ file: MotobikeList.js ~ line 16 ~ MotobikesList ~ motorbikesList", motorbikesList)
+  console.log("🚀 ~ file: MotorbikeList.js ~ line 16 ~ MotorbikesList ~ motorbikesList", motorbikesList)
   
   const onChangePage = (event, newValue) => {
     setPage(newValue);
   };
 
   // useEffect(() => {
-  //   setTotalPage(Math.ceil(motobikesContext.total/motobikesContext.limit));
-  // }, [motobikesContext]);
+  //   setTotalPage(Math.ceil(MotorbikesContext.total/MotorbikesContext.limit));
+  // }, [MotorbikesContext]);
 
   useEffect( async () => {
     setFetched(false);
@@ -79,7 +78,7 @@ const MotobikesList = (props) => {
               }}
             >
               <Typography variant="h6">
-                No motobike is found
+                No Motorbike is found
               </Typography>
             </Grid>
         )
@@ -107,4 +106,4 @@ const MotobikesList = (props) => {
   );
 }
 
-export default MotobikesList;
+export default MotorbikesList;
