@@ -38,7 +38,7 @@ const MotorbikeSingleList = ({ motorbike }) => {
         }}
       >
         <NavLink
-          to={`/motobike/${motorbike.id}`}
+          to={`/motorbikes/${motorbike.id}`}
         >
           <Box>
             <Typography

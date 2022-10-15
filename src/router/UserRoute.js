@@ -12,7 +12,7 @@ import Page404 from '../components/common/404';
 import ToastProvider from '../context/toast.context';
 import CourseRoute from './UserRoute/CourseRoute';
 import HomePage from '../components/user/home/HomePage';
-import AddMotobikePage from '../components/administrator/course/AddMotobikePage';
+import AddMotorbikePage from '../components/administrator/course/AddMotorbikePage';
 import SubscriptionPage from '../components/user/Subscription/SubscriptionPage';
 
 
@@ -23,9 +23,9 @@ const UserRoute = () => (
       <Route exact path="/register" component={Register} />
       <Route exact path="/forget-password" component={ForgotPassword} />
       <Route exact path="/reset" component={ResetPassword} />
-      <Route path="/motobikes" component={CourseRoute} />
+      <Route path="/motorbikes" component={CourseRoute} />
       <Route path="/users" component={UserProfileRoute} />
-      <Route path="/share-bike" component={AddMotobikePage} />
+      <Route path="/share-bike" component={AddMotorbikePage} />
       <Route path="/subscription" component={SubscriptionPage} />
       <Route path="/home" component={HomePage} />
       <Route exact path="/" component={HomePage} />

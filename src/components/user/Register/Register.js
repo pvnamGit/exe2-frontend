@@ -342,7 +342,7 @@ class Register extends React.Component {
                       style={{ width: '5rem', height: '5rem' }}
                     />
                     <Typography variant="h6" color="primary">
-                      Motobike Go
+                      Motorbike Go
                     </Typography>
                   </Box>
                   <Box display="flex" flexDirection="column" mb={3}>

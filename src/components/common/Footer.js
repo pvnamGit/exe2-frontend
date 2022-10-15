@@ -38,7 +38,7 @@ const Footer = () => {
           <span style={{ color: theme.palette.primary.contrastText }}>
             &nbsp;
             <strong>
-              Motobike Go
+              Motorbike Go
             </strong>
           </span>
         </Toolbar>
@@ -51,7 +51,7 @@ const Footer = () => {
           }}
         >
           <strong>
-            Copyright © 2022 Motobike Go
+            Copyright © 2022 Motorbike Go
           </strong>
         </Toolbar>
       </Box>

@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AuthenticationContext } from '../../../context/authentication.context';
-import { MotobikesContext } from '../../../context/motobikes.context';
 import MotorbikesService from '../../../services/motorbikes.service';
 import Body, { Main, SideBar } from '../../basic/Body';
 import NavigationBar from '../../common/NavigationBar';
 // import PublicCourseFilter from './BikeFilter';
-import MotobikeList from './MotobikeList';
+import MotorbikeList from './MotorbikeList';
 
 const MotorbikesPage = (props) => {
 
@@ -14,17 +13,17 @@ const MotorbikesPage = (props) => {
       <NavigationBar
         nav={[
           ['Home', '/'],
-          ['Motobikes'],
+          ['Motorbikes'],
         ]}
       />
       <Body>
         {/* <SideBar>
           <PublicCourseFilter
-            onGetMotobikesList={onGetMotobikeList}
+            onGetMotorbikesList={onGetMotorbikeList}
           />
         </SideBar> */}
         <Main>
-          <MotobikeList
+          <MotorbikeList
           />
         </Main>
       </Body>
