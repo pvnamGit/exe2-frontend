@@ -87,7 +87,7 @@ const SubscriptionPage = (props) => {
           }}>
               Content: <b>Payment ID {transactionNumber}</b>
           </Typography>)}
-          {!paid && !user && 
+          {(user && !user.canCrud && !user.isRequestPayment) && 
           (<Button style={{
             margin: 'auto',
           }} 
