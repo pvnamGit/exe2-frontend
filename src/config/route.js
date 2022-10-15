@@ -46,6 +46,6 @@ export const ANSWER_ID = 'forum/question/:qid/answer/:aid';
 
 // motrbikes
 export const MOTORBIKES = 'motorbikes';
-export const MOTORBIKE_ID = 'motorbike/:cid';
+export const MOTORBIKE_ID = 'motorbike/:mid';
 
 export const TRANSACTIONS = 'transactions'
