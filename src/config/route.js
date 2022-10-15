@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-export const BASE = process.env.REACT_APP_BASE_URL;
+export const BASE = 'http://motorbike-hiring-backend.herokuapp.com/';
 
 // auth
 export const REGISTER = `${BASE}auth/signup`;
@@ -46,6 +46,6 @@ export const ANSWER_ID = 'forum/question/:qid/answer/:aid';
 
 // motrbikes
 export const MOTORBIKES = 'motorbikes';
-export const MOTORBIKE_ID = 'motorbikes/:id';
+export const MOTORBIKE_ID = 'motorbike/:cid';
 
 export const TRANSACTIONS = 'transactions'
