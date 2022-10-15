@@ -1,0 +1,49 @@
+.header {
+  $admin: #ffdd59;
+
+  .nav-item {
+    border-radius: 2rem;
+    padding: 0;
+    margin: 0 0.25rem;
+
+    .MuiListItem-root {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    &:hover {
+      background-color: rgba($primary-color, 0.2);
+      border: 1px solid rgba($primary-color, 0.8);
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $contrast-text-color; 
+    }
+  }
+
+  @media (min-width: 600px) {
+    .MuiToolbar-regular {
+      min-height: 56px;
+    }
+  }
+}
+
+.admin-badge {
+  border: 1px solid #ffdd59;
+  color: #ffdd59;
+  padding: 0rem 0.5rem;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #ffdd59;
+    color: #fff;
+  }
+
+  &.active {
+    background-color: #ffdd59;
+    color: #fff;
+  }
+}

@@ -1,0 +1,23 @@
+.edit-course-sidetab {
+  padding: 0.45rem 0.95rem 0.45rem 0.95rem;
+  background-color: rgba($secondary-color, 0.2);
+
+  .text-vertical {
+    text-align: center;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: rgba($secondary-color, 0.4);
+    border: 2px solid rgba($primary-color, 1);
+    padding-top: calc(0.45rem - 2px);
+    padding-bottom: calc(0.45rem - 2px);
+    padding-right: calc(0.95rem - 2px);
+    padding-left: calc(0.95rem - 2px);
+  }
+
+  &.active-tab {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
