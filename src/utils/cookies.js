@@ -4,8 +4,8 @@ import Cookies from 'universal-cookie';
 // eslint-disable-next-line import/no-cycle
 import { APIService } from '../services/api.service';
 
-const COOKIE_KEY = process.env.REACT_APP_COOKIE_KEY;
-const COOKIE_ACCOUNT_NAME = process.env.REACT_APP_COOKIE_ACCOUNT_NAME;
+const COOKIE_KEY = 'COOKIE_MOTORBIKE_HIRING_KEY';
+const COOKIE_ACCOUNT_NAME = 'MOTORBIKE_HIRING';
 
 export const saveUser = (user, isRemember = false) => {
   const cookies = new Cookies();
