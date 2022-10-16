@@ -77,11 +77,11 @@ const MotorbikeInfo = (props) => {
             </Typography>
             <Typography mt={1} variant="subtitle1">
               <b>
-                Cost: {motorbike.cost} VND/{motorbike.contactInfo}
+                Cost: {motorbike.cost} VND/{motorbike.durationDay}
               </b>
             </Typography>
             <Typography mt={1} variant='subtitle1'>
-              Duraytion day: {motorbike.contactInfo}
+              Duraytion day: {motorbike.durationDay}
             </Typography>
           </Box>
         </Box>
