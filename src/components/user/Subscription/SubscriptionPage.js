@@ -14,6 +14,7 @@ const SubscriptionPage = (props) => {
   const [paid, setPaid] = useState(false);
   const toastContext = useContext(ToastContext);
   const [user, setUser] = useState({});
+  const [requestedPay, setRequestedPay] = useState(false);
 
   const randomTransactionId = () => {
     // 👇️ get number between min (inclusive) and max (inclusive)
@@ -44,9 +45,11 @@ const SubscriptionPage = (props) => {
       }
     }
     fetchUser();
+    if (user) {
+      setRequestedPay(user.isRequestPayment);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
   return (
     <>
       <NavigationBar
@@ -87,7 +90,7 @@ const SubscriptionPage = (props) => {
           }}>
               Content: <b>Payment ID {transactionNumber}</b>
           </Typography>)}
-          {!paid && !user && 
+          {!requestedPay&& 
           (<Button style={{
             margin: 'auto',
           }} 

@@ -23,12 +23,19 @@ class MotorbikesService {
   }
 
   static async createMotorbike(info) {
+    const form = new FormData();
+    Object.keys(info).forEach((key) => {
+      form.append(key, info[key]);
+    });
     try {
       const response = await new APIService(
         'post',
         MOTORBIKES,
         null,
-        info,
+        form,
+        {
+          'Content-Type': 'multipart/form-data',
+        }
       ).request();
       return response;
     } catch (error) {

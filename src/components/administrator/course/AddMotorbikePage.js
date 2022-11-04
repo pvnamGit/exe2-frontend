@@ -87,13 +87,7 @@ const AddMotorbikePage = (props) => {
   const onChangeFile = (event) => {
     setFile(event.target.files[0]);
     setFilename(event.target.value);
-  }
-
-  const onCancelFileUpload = () => {
-    if (file) {
-      setFile(undefined);
-      setFilename('');
-    }
+    setMotorbike({ ...motorbike, files: event.target.files[0] });
   }
 
   const onChangeLength = (event) => {
@@ -210,27 +204,6 @@ const AddMotorbikePage = (props) => {
                 value={filename}
                 onChange={onChangeFile}
               />
-              <Box>
-                <Button
-                  color="secondary"
-                  variant="contained"
-                  disabled={saving || !file}
-                  sx={{ mr: 1 }}
-                >
-                  Create
-                  {
-                    saving && (<Loading />)
-                  }
-                </Button>
-                <Button
-                  color="warning"
-                  variant="contained"
-                  disabled={saving || !file}
-                  onClick={onCancelFileUpload}
-                >
-                  Cancel
-                </Button>
-              </Box>
             </Box>  
             <Box mb={1} mt={1}>
               <Button

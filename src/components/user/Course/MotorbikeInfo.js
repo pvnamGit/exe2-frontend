@@ -57,9 +57,9 @@ const MotorbikeInfo = (props) => {
                   width: 300,
                   height: 300,
                 }}>
-            <img style={{width: '350px'}} src='/image/background/hire_example.jpg' alt='example' />
+            <img style={{width: '350px'}} src={ motorbike.filePath ? motorbike.filePath : 'url(/logo.png)'} alt='example' />
           </Box>
-          <Box>
+          <Box> 
             <Typography style={{ marginTop: '-30px', fontSize: '24px'}} variant="overline" component="h1">
               {motorbike.title}
             </Typography>

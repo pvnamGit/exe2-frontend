@@ -21,7 +21,7 @@ const MotorbikeSingleList = ({ motorbike }) => {
         width: '100%',
         backgroundSize: 'contain',
         backgroundRepeat: 'repeat',
-        backgroundImage: 'url(/image/background/hire_example.jpg)',
+        backgroundImage: motorbike.filePath ? motorbike.filePath : 'url(/logo.png)',
         '&:hover': {
           boxShadow: 7,
         },
