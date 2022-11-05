@@ -59,7 +59,7 @@ const SubscriptionPage = (props) => {
         ]}
       />
       <Body>
-        {( user.canCrud || user.isRequestPayment )? (
+        {( user.canCrud )? (
           <Typography style={{
             margin: 'auto',
             textAlign: 'center'
@@ -84,13 +84,19 @@ const SubscriptionPage = (props) => {
           }}>
               Subscription price: <b>50.000VND/month</b>
           </Typography>
-          {user.id && (<Typography style={{
+          {user.id && !requestedPay && (<Typography style={{
             margin: 'auto',
             textAlign: 'center'
           }}>
               Content: <b>Payment ID {transactionNumber}</b>
           </Typography>)}
-          {!requestedPay&& 
+          {user.id && requestedPay && !user.canCrud && (<Typography style={{
+            margin: 'auto',
+            textAlign: 'center'
+          }}>
+              Your request is being processed
+          </Typography>)}
+          { user.id && !requestedPay&& 
           (<Button style={{
             margin: 'auto',
           }} 

@@ -7,15 +7,16 @@ import { APIService } from './api.service';
 
 class MotorbikesService {
 
-  static async getMotorbikesList() {
+  static async getMotorbikesList(setting = {}) {
+    const queryString = URLService.stringify(setting);
     try {
       const response = await new APIService(
         'get',
-        MOTORBIKES,
+        MOTORBIKES + '?' + queryString,
         null,
       ).request();
       return {
-        data: response.data,
+        data: response,
       };
     } catch (error) {
       return error.message;

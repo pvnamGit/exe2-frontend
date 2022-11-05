@@ -8,6 +8,7 @@ const UploadFileButton = (props) => {
     value,
     onChange,
     sx,
+    required
   } = props;
 
   return (
@@ -21,6 +22,7 @@ const UploadFileButton = (props) => {
         name={name}
         value={value}
         onChange={onChange}
+        required={required}
       />
     </Box>
   )

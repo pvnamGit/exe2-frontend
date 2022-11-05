@@ -19,7 +19,7 @@ import { getUserInformation } from '../../../utils/cookies';
 
 
 const AddMotorbikePage = (props) => {
-  const [motorbike, setMotorbike] = useState({ cost: 100, length: 1 });
+  const [motorbike, setMotorbike] = useState({});
   const [costError, setCostError] = useState('');
   const [lengthError, setLengthError] = useState('');
   const [saving, setSaving] = useState(false);
@@ -54,11 +54,15 @@ const AddMotorbikePage = (props) => {
     setMotorbike({ ...motorbike, contactInfo: event.target.value });
   };
 
+  const onCancelFile = () => {
+    setFilename('');
+  }
+
   useEffect(() => {
-    const shouldDisabledSaveBtn = !user.canCrud ||
+    const shouldDisabledSaveBtn = !user.canCrud || !filename ||
       !motorbike.title || !motorbike.description || !motorbike.contactInfo || !motorbike.cost || !motorbike.durationDay;
     setDisabledSaveBtn(shouldDisabledSaveBtn)
-  }, [motorbike, user])
+  }, [motorbike, user, filename])
 
   const validateCost = (cost) => {
     const costNumber = parseInt(cost, 10);
@@ -130,6 +134,7 @@ const AddMotorbikePage = (props) => {
               <TextField
                 variant="outlined"
                 fullWidth
+                required
                 type='text'
                 label="Title"
                 name="title"
@@ -142,6 +147,7 @@ const AddMotorbikePage = (props) => {
                 variant="outlined"
                 fullWidth
                 multiline
+                required
                 rows={4}
                 maxRows={10}
                 label="Descrtiption"
@@ -155,6 +161,7 @@ const AddMotorbikePage = (props) => {
                 variant="outlined"
                 fullWidth
                 multiline
+                required
                 rows={4}
                 maxRows={10}
                 label="Contact information"
@@ -171,6 +178,8 @@ const AddMotorbikePage = (props) => {
                   type='number'
                   label="Cost"
                   name="cost"
+                  placeholder='100'
+                  required
                   value={motorbike.cost || ''}
                   onChange={onChangeCost}
                   helperText={costError || 'Must be less than 2,000,000 VND'}
@@ -187,6 +196,8 @@ const AddMotorbikePage = (props) => {
                   type='number'
                   label="Duration day"
                   name="legnth"
+                  placeholder='1'
+                  required
                   value={motorbike.durationDay || ''}
                   onChange={onChangeLength}
                   error={!!lengthError}
@@ -202,8 +213,18 @@ const AddMotorbikePage = (props) => {
             >
               <UploadFileButton
                 value={filename}
+                required="true"
                 onChange={onChangeFile}
               />
+              <Box>
+              <Button
+                color="warning"
+                variant="contained"
+                onClick={onCancelFile}
+              >
+                Cancel
+              </Button>
+            </Box>
             </Box>  
             <Box mb={1} mt={1}>
               <Button
