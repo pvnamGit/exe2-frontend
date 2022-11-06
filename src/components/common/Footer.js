@@ -31,8 +31,8 @@ const Footer = () => {
       <Box>
         <Toolbar>
           <Avatar
-            alt="Big-O Logo"
-            src="logo.png"
+            alt="Motorbike go Logo"
+            src="logo_motorbike_go.png"
             style={{ backgroundColor: '#fff' }}
           />
           <span style={{ color: theme.palette.primary.contrastText }}>

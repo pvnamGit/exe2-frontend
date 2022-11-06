@@ -131,7 +131,7 @@ class Login extends React.Component {
                 >
                   <Box mb={2} display="flex" flexDirection="column" alignItems="center">
                     <Avatar
-                      src="logo.png"
+                      src="logo_motorbike_go.png"
                       style={{ width: '5rem', height: '5rem' }}
                     />
                     <Typography variant="h6" color="primary">

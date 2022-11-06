@@ -193,7 +193,7 @@ const Header = () => {
                 <IconButton>
                   <Avatar
                     alt="Motorbike Go"
-                    src="logo.png"
+                    src="logo_motorbike_go.png"
                   />
                 </IconButton>
                 <Box>
