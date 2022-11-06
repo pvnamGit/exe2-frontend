@@ -7,15 +7,16 @@ import { APIService } from './api.service';
 
 class MotorbikesService {
 
-  static async getMotorbikesList() {
+  static async getMotorbikesList(setting = {}) {
+    const queryString = URLService.stringify(setting);
     try {
       const response = await new APIService(
         'get',
-        MOTORBIKES,
+        MOTORBIKES + '?' + queryString,
         null,
       ).request();
       return {
-        data: response.data,
+        data: response,
       };
     } catch (error) {
       return error.message;
@@ -23,12 +24,19 @@ class MotorbikesService {
   }
 
   static async createMotorbike(info) {
+    const form = new FormData();
+    Object.keys(info).forEach((key) => {
+      form.append(key, info[key]);
+    });
     try {
       const response = await new APIService(
         'post',
         MOTORBIKES,
         null,
-        info,
+        form,
+        {
+          'Content-Type': 'multipart/form-data',
+        }
       ).request();
       return response;
     } catch (error) {

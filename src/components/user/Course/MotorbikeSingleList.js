@@ -21,7 +21,7 @@ const MotorbikeSingleList = ({ motorbike }) => {
         width: '100%',
         backgroundSize: 'contain',
         backgroundRepeat: 'repeat',
-        backgroundImage: 'url(/image/background/hire_example.jpg)',
+        backgroundImage: `url(${motorbike.filePath ? motorbike.filePath : '/image/homepage_motorbike_go.png'})`,
         '&:hover': {
           boxShadow: 7,
         },
@@ -73,7 +73,7 @@ const MotorbikeSingleList = ({ motorbike }) => {
             fontStyle="italic"
             textAlign="center"
           >
-            {`${Math.floor(parseInt(motorbike.cost, 10))}K/${motorbike.durationDay}'`}
+            {`${Math.floor(parseInt(motorbike.cost, 10))}K/${motorbike.durationDay} day(s)`}
           </Typography>
         </Box>
       </Box>

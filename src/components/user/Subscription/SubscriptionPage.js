@@ -14,6 +14,7 @@ const SubscriptionPage = (props) => {
   const [paid, setPaid] = useState(false);
   const toastContext = useContext(ToastContext);
   const [user, setUser] = useState({});
+  const [requestedPay, setRequestedPay] = useState(false);
 
   const randomTransactionId = () => {
     // 👇️ get number between min (inclusive) and max (inclusive)
@@ -44,9 +45,11 @@ const SubscriptionPage = (props) => {
       }
     }
     fetchUser();
+    if (user) {
+      setRequestedPay(user.isRequestPayment);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
   return (
     <>
       <NavigationBar
@@ -56,7 +59,7 @@ const SubscriptionPage = (props) => {
         ]}
       />
       <Body>
-        {( user.canCrud || user.isRequestPayment )? (
+        {( user.canCrud )? (
           <Typography style={{
             margin: 'auto',
             textAlign: 'center'
@@ -81,13 +84,19 @@ const SubscriptionPage = (props) => {
           }}>
               Subscription price: <b>50.000VND/month</b>
           </Typography>
-          {user.id && (<Typography style={{
+          {user.id && !requestedPay && (<Typography style={{
             margin: 'auto',
             textAlign: 'center'
           }}>
               Content: <b>Payment ID {transactionNumber}</b>
           </Typography>)}
-          {(!paid && !user.canCrud && !user.isRequestPayment) && 
+          {user.id && requestedPay && !user.canCrud && (<Typography style={{
+            margin: 'auto',
+            textAlign: 'center'
+          }}>
+              Your request is being processed
+          </Typography>)}
+          { user.id && !requestedPay&& 
           (<Button style={{
             margin: 'auto',
           }} 

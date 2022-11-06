@@ -24,7 +24,7 @@ const HomePage = () => {
           flexDirection="row"
           flexWrap="wrap"
           justifyContent="center"
-          sx={{ mt: 2 }}
+          sx={{ mt: 2, mb: 4 }}
         >
           <Box style={{margin: 'auto'}}>
             <Typography
@@ -44,7 +44,7 @@ const HomePage = () => {
           </Box>
           <Box>
             <img
-              src="image/homepage_motorbike.png"
+              src="image/homepage_motorbike_go.png"
               alt="Motorbike"
               style={{
                 maxHeight: "20rem"
