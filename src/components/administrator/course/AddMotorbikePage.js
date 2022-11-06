@@ -150,7 +150,7 @@ const AddMotorbikePage = (props) => {
                 required
                 rows={4}
                 maxRows={10}
-                label="Descrtiption"
+                label="Description"
                 name="description"
                 value={motorbike.description || ''}
                 onChange={onChangeDescription}
