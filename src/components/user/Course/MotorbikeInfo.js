@@ -57,7 +57,7 @@ const MotorbikeInfo = (props) => {
                   width: 300,
                   height: 300,
                 }}>
-            <img style={{maxWidth: '500px', maxHeight: '400px'}} src={ motorbike.filePath ? motorbike.filePath : "/image/homepage_motorbike.png"} alt='example' />
+            <img style={{maxWidth: '500px', maxHeight: '400px'}} src={ motorbike.filePath ? motorbike.filePath : "/image/homepage_motorbike_go.png"} alt='example' />
           </Box>
           <Box style={{marginTop: '50px'}}> 
             <Typography style={{ marginTop: '-30px', fontSize: '28px'}} variant="h1">

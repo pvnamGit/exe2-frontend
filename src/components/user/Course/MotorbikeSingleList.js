@@ -21,7 +21,7 @@ const MotorbikeSingleList = ({ motorbike }) => {
         width: '100%',
         backgroundSize: 'contain',
         backgroundRepeat: 'repeat',
-        backgroundImage: `url(${motorbike.filePath ? motorbike.filePath : '/image/homepage_motorbike.png'})`,
+        backgroundImage: `url(${motorbike.filePath ? motorbike.filePath : '/image/homepage_motorbike_go.png'})`,
         '&:hover': {
           boxShadow: 7,
         },
