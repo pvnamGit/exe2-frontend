@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-export const BASE = 'https://localhost:8080/api/';
+export const BASE = 'http://localhost:8080/api/';
 
 // auth
 export const REGISTER = `${BASE}auth/signup`;
