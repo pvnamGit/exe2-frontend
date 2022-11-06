@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-export const BASE = 'https://motorbike-hiring-backend.herokuapp.com/api/';
+export const BASE = 'https://localhost:8080/api/';
 
 // auth
 export const REGISTER = `${BASE}auth/signup`;
