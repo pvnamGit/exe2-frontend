@@ -14,7 +14,7 @@ import CourseRoute from './UserRoute/CourseRoute';
 import HomePage from '../components/user/home/HomePage';
 import AddMotorbikePage from '../components/administrator/course/AddMotorbikePage';
 import SubscriptionPage from '../components/user/Subscription/SubscriptionPage';
-import YourMotorbikePage from '../components/user/Course/YourMotorbikesPage.';
+import YourMotorbikePage from '../components/user/Course/YourMotorbikesPage';
 
 
 const UserRoute = () => (

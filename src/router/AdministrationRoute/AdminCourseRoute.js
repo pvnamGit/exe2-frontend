@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AddMotorbikePage from '../../components/administrator/course/AddMotorbikePage';
 import CoursePage from '../../components/administrator/course/CoursePage';
-import EditMotorbikePage from '../../components/administrator/course/EditMotorbikePage';
 import AdminCourseProvider from '../../context/adminMotorbikes.context';
 import AdminCourseMaterialProvider from '../../context/adminCourseMaterial.context';
 import AdminCourseStudentProvider from '../../context/AdminCourseStudent.context';
@@ -16,7 +15,6 @@ const AdminUserRoute = () => {
           <AdminCourseStudentProvider>
             <Switch>
                 <Route path="/admin/courses/add" component={AddMotorbikePage} />
-                <Route path="/admin/courses/edit/:id" component={EditMotorbikePage} />
                 <Route path="/admin/courses" component={CoursePage} />
             </Switch>
           </AdminCourseStudentProvider>

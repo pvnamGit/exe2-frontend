@@ -72,6 +72,26 @@ class MotorbikesService {
       return error.message;
     }
   }
+  static async updateMotorbike(mid,info) {
+    const form = new FormData();
+    Object.keys(info).forEach((key) => {
+      form.append(key, info[key]);
+    });
+    try {
+      const response = await new APIService(
+        'put',
+        MOTORBIKE_ID,
+        null,
+        form,
+        {
+          'Content-Type': 'multipart/form-data',
+        }
+      ).request();
+      return response;
+    } catch (error) {
+      return error.message;
+    }
+  }
 }
 
 export default MotorbikesService;

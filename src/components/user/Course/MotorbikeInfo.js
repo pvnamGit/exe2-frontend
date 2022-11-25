@@ -2,26 +2,43 @@ import {
   Grid,
   Typography,
   Box,
+  
 } from '@mui/material';
+import Button from '@mui/material/Button';
+
 import {
   useTheme,
   alpha,
 } from '@mui/material/styles';
 import React, { useContext, useEffect, useState } from 'react';
 import Body from '../../basic/Body';
-import Page404 from '../../common/404';
 import NavigationBar from '../../common/NavigationBar';
 import MotorbikesService from '../../../services/motorbikes.service';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-
-
-
+import { getUserInformation } from '../../../utils/cookies'; 
+import UserService from '../../../services/user.service';
+import EditMotorbikePage from './EditMotorbikePage';
+import { Link } from 'react-router-dom';
 
 const MotorbikeInfo = (props) => {
   const { match } = props;
   const [fetched, setFetched] = useState(false); 
   const [motorbike, setMotorbike] = useState({});
+  const [userId, setUserId]= useState();
+  const [user, setUser] = useState({});
 
+ 
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (getUserInformation()) {
+        const newUser = await UserService.getUserProfile(getUserInformation().id);
+        setUser(newUser);
+      }
+    }
+    fetchUser();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   useEffect(() => {
     setFetched(true);
     if (!Number.isInteger(parseInt(match.params.mid, 10))) {
@@ -32,12 +49,12 @@ const MotorbikeInfo = (props) => {
     const fetchMotorbike = async () => {
       const moto = await MotorbikesService.getMotorbike(mid);
       setMotorbike(moto.data);
+      setUserId(moto.userId);
     }
     fetchMotorbike(motorbike.id);
     setFetched(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
+  }, [userId])
   return (
     <>
       <NavigationBar
@@ -91,8 +108,12 @@ const MotorbikeInfo = (props) => {
             <Typography mt={1} variant='subtitle1'>
               Duration day: {motorbike.durationDay} day(s)
             </Typography>
+            {user.id === userId ? (
+                            <Link></Link>
+            ): (<h2></h2>)}
           </Box>
-            </div>
+           </div>
+          
           </div>
 
 

@@ -6,6 +6,7 @@ import MotorbikesProvider from '../../context/motorbikes.context';
 import AdminCourseMaterialProvider from '../../context/adminCourseMaterial.context';
 import AdminCourseTimetableProvider from '../../context/adminCourseTimetable.context';
 import MotorbikeInfo from '../../components/user/Course/MotorbikeInfo';
+import EditMotorbikePage from '../../components/user/Course/EditMotorbikePage';
 
 const CourseRoute = () => {
 
@@ -16,6 +17,7 @@ const CourseRoute = () => {
           <Switch>
             <Route path="/motorbikes/:mid" component={MotorbikeInfo} />
             <Route path="/motorbikes" component={MotorbikesPage} />
+            <Route path="/motorbikes/edit/:mid" component={EditMotorbikePage} />
             <Route component={Page404} />
           </Switch>
         </AdminCourseTimetableProvider>
