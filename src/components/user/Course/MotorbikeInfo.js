@@ -18,7 +18,6 @@ import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { getUserInformation } from '../../../utils/cookies'; 
 import UserService from '../../../services/user.service';
 import EditMotorbikePage from './EditMotorbikePage';
-import { Link } from 'react-router-dom';
 
 const MotorbikeInfo = (props) => {
   const { match } = props;
@@ -109,7 +108,8 @@ const MotorbikeInfo = (props) => {
               Duration day: {motorbike.durationDay} day(s)
             </Typography>
             {user.id === userId ? (
-                            <Link></Link>
+                            <Button variant='contained' 
+                             >Edit </Button>
             ): (<h2></h2>)}
           </Box>
            </div>
