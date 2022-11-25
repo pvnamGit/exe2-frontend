@@ -1,7 +1,7 @@
 import AdminAPIService from './adminAPI.service';
 import URLService from './URL.service';
 import {
-  MOTORBIKES, MOTORBIKE_ID,
+  MOTORBIKES, MOTORBIKE_ID,YOUR_MOTORBIKE
 } from '../config/route';
 import { APIService } from './api.service';
 
@@ -13,6 +13,21 @@ class MotorbikesService {
       const response = await new APIService(
         'get',
         MOTORBIKES + '?' + queryString,
+        null,
+      ).request();
+      return {
+        data: response,
+      };
+    } catch (error) {
+      return error.message;
+    }
+  }
+// get your motorbike
+  static async getYourMotorbikesList(setting = {}) {
+    const qs = URLService.stringify(setting);
+    try {
+      const response = await new APIService(
+        'get',YOUR_MOTORBIKE + '?' + qs,
         null,
       ).request();
       return {

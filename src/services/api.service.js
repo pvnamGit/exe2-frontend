@@ -9,7 +9,7 @@ export class APIService {
   /**
    * @param {string} method - 'get', 'post', 'put' or 'delete'
    * @param {string} url - original url without specific parameter
-   * @param {object} params - an object contains all url parameter,
+   * @param {object} params - an object c00ontains all url parameter,
    * object key must be the same as parameter key
    * @param {object} data - the data which you want to send
    * @param {boolean} auth
