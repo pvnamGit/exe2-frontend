@@ -53,14 +53,22 @@ const MotorbikeInfo = (props) => {
           flexDirection: 'column',
           width: '80%'
         }}>
-          <Box sx={{
+         <div>
+         {/* <Box sx={{
                   width: 300,
                   height: 300,
                 }}>
             <img style={{maxWidth: '500px', maxHeight: '400px'}} src={ motorbike.filePath ? motorbike.filePath : "/image/homepage_motorbike_go.png"} alt='example' />
-          </Box>
-          <Box style={{marginTop: '50px'}}> 
-            <Typography style={{ marginTop: '-30px', fontSize: '28px'}} variant="h1">
+          </Box> */}
+         </div>
+          
+          <div className="MainContainer" >
+            <div className="Product">
+            <img  src={ motorbike.filePath ? motorbike.filePath : "/image/homepage_motorbike_go.png"} alt='example' />
+            </div>
+            <div className="ProductData">
+              <Box > 
+            <Typography style={{ marginTop: '-30px', fontSize: '28px'}} variant="subtitle2">
               {motorbike.title}
             </Typography>
             <Typography mt={2} variant="h6" >
@@ -84,6 +92,43 @@ const MotorbikeInfo = (props) => {
               Duration day: {motorbike.durationDay} day(s)
             </Typography>
           </Box>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          {/* <Box style={{marginTop: '50px'}}> 
+            <Typography style={{ marginTop: '-30px', fontSize: '28px'}} variant="h1">
+              {motorbike.title}
+            </Typography>
+            <Typography mt={2} variant="h6" >
+            <b>Description</b>
+            </Typography>
+            <Typography style={{display: "list-item"}} mt={1} ml={2} variant='body1'>
+            {motorbike.description}
+            </Typography>
+            <Typography mt={2} variant="h6">
+              <b>Contact</b>
+            </Typography>
+            <Typography style={{display: "list-item"}} mt={1} ml={2} variant='body1'>
+              {motorbike.contactInfo}
+            </Typography>
+            <Typography mt={2} variant="subtitle1">
+              <b>
+                Cost: {motorbike.cost}.000 VND
+              </b>
+            </Typography>
+            <Typography mt={1} variant='subtitle1'>
+              Duration day: {motorbike.durationDay} day(s)
+            </Typography>
+          </Box> */}
         </Box>
       </Body>
     </>
