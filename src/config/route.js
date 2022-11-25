@@ -49,3 +49,4 @@ export const MOTORBIKES = 'motorbikes';
 export const MOTORBIKE_ID = 'motorbike/:mid';
 
 export const TRANSACTIONS = 'transactions'
+export const YOUR_MOTORBIKE ='your_motorbikes'

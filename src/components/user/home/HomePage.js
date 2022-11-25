@@ -8,6 +8,7 @@ import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import ShareIcon from '@mui/icons-material/Share';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { NavLink } from 'react-router-dom';
+import { Inventory } from '@mui/icons-material';
 
 const HomePage = () => {
 
@@ -62,6 +63,14 @@ const HomePage = () => {
         >
           {
             [{
+              color: 'red',
+              textColor: '#fff',
+              text: 'Show your own Motorbike',
+              href: '/your_motorbikes',
+              icon: <Inventory sx={{ fontSize: "7rem" }} 
+              />,
+            },
+              {
               color: 'primary.main',
               textColor: '#fff',
               text: 'Hiring a Motorbike',

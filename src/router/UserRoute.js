@@ -14,6 +14,7 @@ import CourseRoute from './UserRoute/CourseRoute';
 import HomePage from '../components/user/home/HomePage';
 import AddMotorbikePage from '../components/administrator/course/AddMotorbikePage';
 import SubscriptionPage from '../components/user/Subscription/SubscriptionPage';
+import YourMotorbikePage from '../components/user/Course/YourMotorbikesPage.';
 
 
 const UserRoute = () => (
@@ -24,6 +25,7 @@ const UserRoute = () => (
       <Route exact path="/forget-password" component={ForgotPassword} />
       <Route exact path="/reset" component={ResetPassword} />
       <Route path="/motorbikes" component={CourseRoute} />
+      <Route path="/your_motorbikes" component={YourMotorbikePage} />
       <Route path="/users" component={UserProfileRoute} />
       <Route path="/share-bike" component={AddMotorbikePage} />
       <Route path="/subscription" component={SubscriptionPage} />

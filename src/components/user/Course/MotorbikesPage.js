@@ -5,6 +5,8 @@ import Body, { Main, SideBar } from '../../basic/Body';
 import NavigationBar from '../../common/NavigationBar';
 // import PublicCourseFilter from './BikeFilter';
 import MotorbikeList from './MotorbikeList';
+import MotorbikeYourList from './MotorbikeYourList';
+
 
 const MotorbikesPage = (props) => {
 
